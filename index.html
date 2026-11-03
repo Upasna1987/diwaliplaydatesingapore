@@ -120,6 +120,15 @@
   @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
   .friends{columns:4 220px;column-gap:14px;margin-top:40px}
   .friends img{width:100%;margin-bottom:14px;border-radius:20px;border:5px solid #fff;box-shadow:0 8px 20px rgba(31,59,56,.12);break-inside:avoid;display:block}
+  .orgs{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px;max-width:960px}
+  @media(max-width:760px){.orgs{grid-template-columns:1fr}}
+  .org{background:var(--white);border:2px solid var(--line);border-radius:28px;padding:26px;text-align:center;box-shadow:0 10px 26px rgba(242,106,27,.08)}
+  .org:nth-child(1){background:linear-gradient(180deg,var(--cream),var(--white) 45%)}.org:nth-child(2){background:linear-gradient(180deg,var(--pink),var(--white) 45%)}
+  .org img{width:190px;height:190px;object-fit:cover;object-position:50% 25%;border-radius:50%;border:6px solid #fff;box-shadow:0 10px 24px rgba(31,59,56,.18)}
+  .org h3{font-size:28px;margin:14px 0 2px}
+  .org .role{font-weight:800;color:var(--rose);font-size:14px;letter-spacing:.04em;margin-bottom:10px}
+  .org p{color:var(--muted);font-size:15.5px}
+  .org a{display:inline-block;margin-top:12px;font-weight:800;color:var(--teal);text-decoration:none}
   .note{color:var(--muted);font-size:13.5px;margin-top:14px}
 
   .partner{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -281,6 +290,30 @@
       <img src="images/f-family-boys.jpg" alt="" loading="lazy">
       <img src="images/f-family-blond.jpg" alt="" loading="lazy">
       <img src="images/f-couple.jpg" alt="" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="organisers" style="padding-top:20px">
+  <div class="wrap center">
+    <span class="ribbon">Meet your organisers</span>
+    <h2>Two mums, <span class="script">one big party</span></h2>
+    <p class="lead">Diwali Playdate started with two Singapore mums who wanted their kids to grow up loving Deepavali as much as they did.</p>
+  </div>
+  <div class="wrap orgs">
+    <div class="org">
+      <img src="images/org-b.jpg" alt="Rinie Gupta">
+      <h3>Rinie <span class="script">Gupta</span></h3>
+      <p class="role">Sleep consultant · Podcaster · Mum</p>
+      <p>Rinie is the founder of Yawn to Dawn and a newborn, baby and toddler sleep consultant. She helps tired Indian parents of under-5s get their nights back, and podcasts about parenting along the way. At Diwali Playdate she's usually on the mic, telling the Ramayan story and keeping the evening flowing.</p>
+      <a href="https://www.instagram.com/riniegupta/" target="_blank" rel="noopener">@riniegupta</a>
+    </div>
+    <div class="org">
+      <img src="images/org-a.jpg" alt="Sana">
+      <h3>Sana <span class="script">(Upasna)</span></h3>
+      <p class="role">Founder · Twins mama · Dog parent</p>
+      <p>Sana is a tech founder building SympleHost, a mum to twins and a proud pawrent. She loves bringing people together and turning big ideas into real events, from the booths and crafts to the very last diya.</p>
+      <a href="https://www.instagram.com/symplesana/" target="_blank" rel="noopener">@symplesana</a>
     </div>
   </div>
 </section>
