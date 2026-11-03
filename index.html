@@ -140,10 +140,11 @@
   .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .pair img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;border:6px solid #fff;box-shadow:0 12px 28px rgba(31,59,56,.15)}
   .pair img:first-child{transform:rotate(-2deg)}.pair img:last-child{transform:rotate(2deg);margin-top:30px}
-  .friends{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
-  @media(max-width:860px){.friends{grid-template-columns:repeat(2,1fr)}}
+  .friends{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(4,1fr);grid-auto-rows:250px;gap:14px;margin-top:40px}
+  @media(max-width:860px){.friends{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}}
+  .friends img.wide{grid-column:span 2;aspect-ratio:auto;height:100%}
   .friends img.tall{grid-row:span 2;aspect-ratio:auto;height:100%}
-  .friends img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%;border-radius:20px;border:5px solid #fff;box-shadow:0 8px 20px rgba(31,59,56,.12);display:block}
+  .friends img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;border-radius:20px;border:5px solid #fff;box-shadow:0 8px 20px rgba(31,59,56,.12);display:block}
   .orgs{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px;max-width:960px}
   @media(max-width:760px){.orgs{grid-template-columns:1fr}}
   .org{background:var(--white);border:2px solid var(--line);border-radius:28px;padding:26px;text-align:center;box-shadow:0 10px 26px rgba(242,106,27,.08)}
@@ -257,7 +258,7 @@
     <div class="acts">
       <div class="act"><img class="ph" src="/images/act-raavan.jpg" alt="Kids at the Raavan knock-down cup pyramids" style="object-position:50% 60%"><h3>Knock the <em>Raavan</em></h3><p>Knock down the cup pyramids with soft balls and win a small prize.</p></div>
       <div class="act"><img class="ph" src="/images/act-diya.jpg" alt="Kids decorating tea-light holders at the diya painting table" style="object-position:50% 50%"><h3>Diya <em>Painting</em></h3><p>Decorate a tea-light holder to take home, with acrylic markers, gems and mirror stickers.</p></div>
-      <div class="act"><img class="ph" src="/images/act-bangles.jpg" alt="A stand of colourful glass bangles at the henna and bangle corner" style="object-position:50% 45%"><h3>Henna &amp; <em>Bangle Corner</em></h3><p>Kid-friendly mehendi tattoo stickers, applied with a sponge and water. Plus a bangle corner!</p></div>
+      <div class="act"><img class="ph" src="/images/act-bangles-hands.jpg" alt="Little wrists in festive bangles, getting a red thread tied" style="object-position:50% 55%"><h3>Henna &amp; <em>Bangle Corner</em></h3><p>Kid-friendly mehendi tattoo stickers, applied with a sponge and water. Plus a bangle corner!</p></div>
       <div class="act"><img class="ph" src="/images/act-rangoli.jpg" alt="Little hands filling a rangoli stencil with colour" style="object-position:55% 50%"><h3>Rangoli <em>Making</em></h3><p>Group rangoli with stencil boards, coloured rice and other sensory materials for older kids, and soft flower-petal rangoli on floor boards for little ones under 2. Finished boards go on display.</p></div>
       <div class="act"><img class="ph" src="/images/act-thali.jpg" alt="A decorated puja thali with a glowing diya" style="object-position:50% 45%"><h3>Decorate a <em>Puja Thali</em></h3><p>Turn a plate into your very own puja thali with mirror stickers, pom poms, paint and markers.</p></div>
       <div class="act"><img class="ph" src="/images/k-story.jpg" alt="Kids listening to the Ramayan story"><h3>Puja &amp; <em>Ramayan</em></h3><p>A Ganesh–Lakshmi puja, then the story of Rama, Sita and the festival of lights, told on the big screen.</p></div>
@@ -339,10 +340,11 @@
       <img src="/images/f-saree-boy.jpg" alt="" loading="lazy">
       <img src="/images/f-family-boys.jpg" alt="" loading="lazy">
       <img src="/images/f-family-blond.jpg" alt="" loading="lazy">
-      <img src="/images/f-couple.jpg" alt="" loading="lazy">
+      <img src="/images/f-couple.jpg" alt="" loading="lazy" class="wide" style="object-position:50% 50%">
       <img src="/images/f-dad-toddler.jpg" alt="" loading="lazy">
-      <img src="/images/f-kid-teal.jpg" alt="A little one grinning in a teal kurta" loading="lazy">
+      <img src="/images/f-kid-teal.jpg" alt="A little one grinning in a teal kurta" loading="lazy" class="tall">
       <img src="/images/f-dad-toddler-pink.jpg" alt="A toddler running across the dance floor with dad close behind" loading="lazy">
+      <img src="/images/f-mum-toddler-diya.jpg" alt="A mum and her toddler holding a diya during the aarti" loading="lazy" class="wide" style="object-position:70% 40%">
     </div>
   </div>
 </section>
