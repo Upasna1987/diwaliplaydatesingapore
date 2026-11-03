@@ -118,6 +118,8 @@
   .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
   .gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 30%;border-radius:20px;border:5px solid #fff;box-shadow:0 8px 20px rgba(31,59,56,.12)}
   @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .duo{position:relative;padding:0 0 150px 0}.duo .why-img:first-child{width:86%;margin-left:14%;transform:rotate(1.5deg)}
+  .duo .d2{position:absolute;right:2%;bottom:0;width:34%;transform:rotate(4deg)}.duo .d3{position:absolute;left:0;bottom:30px;width:34%;transform:rotate(-4deg)}
   .friends{columns:4 220px;column-gap:14px;margin-top:40px}
   .friends img{width:100%;margin-bottom:14px;border-radius:20px;border:5px solid #fff;box-shadow:0 8px 20px rgba(31,59,56,.12);break-inside:avoid;display:block}
   .orgs{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px;max-width:960px}
@@ -128,6 +130,7 @@
   .org h3{font-size:28px;margin:14px 0 2px}
   .org .role{font-weight:800;color:var(--rose);font-size:14px;letter-spacing:.04em;margin-bottom:10px}
   .org p{color:var(--muted);font-size:15.5px}
+  .org img.fam{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:20px;margin-top:18px}
   .org a{display:inline-block;margin-top:12px;font-weight:800;color:var(--teal);text-decoration:none}
   .note{color:var(--muted);font-size:13.5px;margin-top:14px}
 
@@ -285,7 +288,6 @@
     <div class="friends">
       <img src="images/f-mums.jpg" alt="" loading="lazy">
       <img src="images/f-saree-boy.jpg" alt="" loading="lazy">
-      <img src="images/f-family-girls.jpg" alt="" loading="lazy">
       <img src="images/f-mum-girl.jpg" alt="" loading="lazy">
       <img src="images/f-family-boys.jpg" alt="" loading="lazy">
       <img src="images/f-family-blond.jpg" alt="" loading="lazy">
@@ -308,6 +310,7 @@
       <p class="role">Sleep consultant · Podcaster · Mum</p>
       <p>Rinie is the founder of Yawn to Dawn and a newborn, baby and toddler sleep consultant. She helps tired Indian parents of under-5s get their nights back, and podcasts about parenting along the way. At Diwali Playdate she's usually on the mic, telling the Ramayan story and keeping the evening flowing.</p>
       <a href="https://www.instagram.com/riniegupta/" target="_blank" rel="noopener">@riniegupta</a>
+      <img class="fam" src="images/f-rinie-family.jpg" alt="Rinie with her family at Diwali Playdate 2026" loading="lazy">
     </div>
     <div class="org">
       <img src="images/org-a.jpg" alt="Sana">
@@ -315,6 +318,7 @@
       <p class="role">Founder · Twins mama · Dog parent</p>
       <p>Sana is a tech founder building SympleHost, a mum to twins and a proud pawrent. She loves bringing people together and turning big ideas into real events, from the booths and crafts to the very last diya.</p>
       <a href="https://www.instagram.com/symplesana/" target="_blank" rel="noopener">@symplesana</a>
+      <img class="fam" src="images/f-family-girls.jpg" alt="Sana with her family at Diwali Playdate 2026" loading="lazy">
     </div>
   </div>
 </section>
