@@ -28,7 +28,7 @@ PAGES=[
  ('', 'Diwali Playdate Singapore | Deepavali Events for Kids 2027', None, blocks),
  ('activities','Deepavali Activities &amp; Crafts for Kids, Toddlers &amp; Preschoolers | Singapore','Rangoli, diya painting, henna, puja thali, Knock the Raavan, Ramayan storytime, a kids fashion show and Bollywood dance: see every activity and the evening itinerary.',[named['activities'],named['itinerary'],cta]),
  ('2026','Diwali Playdate 2026 Photos | Deepavali Event for Kids Singapore','Highlights from Diwali Playdate 2026 at Vida Lounge, Vidacity, Pasir Ris: rangoli, crafts, the fashion show and the Bollywood dance party.',[named['2026-highlights'],cta]),
- ('about','Meet the Organisers | Diwali Playdate Singapore','Diwali Playdate Singapore is organised by two Singapore mums and entrepreneurs, Rinie Gupta of Yawn to Dawn and Sana of SympleHost.',[named['organisers'],why,cta]),
+ ('about','Meet the Organisers | Diwali Playdate Singapore','Diwali Playdate Singapore is organised by two Singapore mums and entrepreneurs, Rinie Gupta of Yawn to Dawn and Sana of SympleHost.',[named['organisers'],named['reviews'],why,cta]),
  ('talent-show','Kids Talent Show Nominations | Diwali Playdate Singapore','Nominate your child (ages 1–10) for the Diwali Playdate 2027 talent show. Every performer gets a certificate.',[named['talent-show']]),
  ('volunteer','Volunteer at Diwali Playdate Singapore','Run a craft or activity station at Diwali Playdate 2027. Pick your station and send us a short role-play video.',[named['volunteer']]),
  ('partner','Sponsor or Partner with Diwali Playdate Singapore','Sponsors, vendors, goodie-bag partners and community groups: reach families celebrating Deepavali in Singapore.',[named['partner']]),
