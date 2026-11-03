@@ -149,17 +149,17 @@
 <header class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Singapore · Deepavali <span class="tbd">2027</span></p>
+      <p class="eyebrow">Singapore · Deepavali 2027 · Waitlist open</p>
       <h1>Little lights,<br><em>big celebration.</em></h1>
       <p class="tag">A hands-on Deepavali morning made for kids aged 2–7.</p>
       <p class="lead">Rangoli, diyas, mehndi, stories, dance and festive treats — all in one joyful, mess-friendly space, so your little ones can live the festival, not just watch it.</p>
       <div class="meta">
-        <span class="chip">📅 <span class="tbd">Date TBC</span></span>
-        <span class="chip">📍 <span class="tbd">Venue TBC</span>, Singapore</span>
+        <span class="chip">📅 Around Deepavali, Oct–Nov 2027</span>
+        <span class="chip">📍 Singapore · venue announced soon</span>
         <span class="chip">👶 Ages 2–7</span>
       </div>
       <div class="cta">
-        <a href="#join" class="btn btn-primary">Join the waitlist</a>
+        <a href="#join" class="btn btn-primary">Join the 2027 waitlist</a>
         <a href="#partner" class="btn btn-ghost">Partner with us</a>
       </div>
     </div>
@@ -199,8 +199,8 @@
     <p class="lead">One ticket covers every activity, all materials, take-home crafts, and food — no extra spend on the day.</p>
     <div class="facts">
       <div class="fact"><b>Ages 2–7</b><span>Siblings under 1 come free</span></div>
-      <div class="fact"><b><span class="tbd">3 hours</span></b><span>Drop in, play, eat, repeat</span></div>
-      <div class="fact"><b><span class="tbd">S$__</span></b><span>Per child · early-bird for waitlist</span></div>
+      <div class="fact"><b>One big morning</b><span>Play, create, dance, eat, repeat</span></div>
+      <div class="fact"><b>Early-bird</b><span>Waitlist families get first access to tickets</span></div>
       <div class="fact"><b>All materials</b><span>Plus crafts to take home</span></div>
     </div>
   </div>
@@ -258,18 +258,17 @@
     <p class="eyebrow">FAQ</p>
     <h2>Good to know</h2>
     <details><summary>Do we need to be Indian or Hindu to come?</summary><p>Not at all. Deepavali is celebrated across Singapore, and every family is welcome to share in it.</p></details>
-    <details><summary>Do parents need a ticket?</summary><p><span class="tbd">Fill in: e.g. one adult free per child, extra adults S$__.</span></p></details>
+    <details><summary>When do tickets go on sale?</summary><p>As soon as we've secured the 2027 venue. Waitlist families hear first and get early-bird access before tickets open to everyone.</p></details>
     <details><summary>What should my child wear?</summary><p>Festive clothes are lovely, but things will get colourful — wear something that can handle rangoli powder and henna.</p></details>
-    <details><summary>Is the food vegetarian?</summary><p><span class="tbd">Fill in: e.g. all food is vegetarian; let us know about allergies when booking.</span></p></details>
-    <details><summary>Can I get a refund?</summary><p><span class="tbd">Fill in your refund/transfer policy.</span></p></details>
+    <details><summary>Does joining the waitlist commit me to anything?</summary><p>Not at all. It just means you'll be first to know the date, venue and ticket details.</p></details>
   </div>
 </section>
 
 <section class="join" id="join">
   <div class="wrap">
     <p class="eyebrow" style="color:var(--marigold)">Join us</p>
-    <h2>Get on the waitlist</h2>
-    <p class="lead">Spots are limited. Waitlist families get first access to tickets and early-bird pricing.</p>
+    <h2>Join the 2027 waitlist</h2>
+    <p class="lead">We're securing our 2027 venue now. Tickets open as soon as it's confirmed — and waitlist families get first access and early-bird pricing.</p>
 
     <!-- Replace YOUR_FORM_ID with a free Formspree form id (formspree.io) so sign-ups land in your inbox -->
     <form id="waitlist" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
@@ -291,7 +290,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Diwali Playdate Singapore</span>
-    <span><a href="mailto:hello@diwaliplaydatesingapore.com">hello@diwaliplaydatesingapore.com</a> · <a href="https://instagram.com/" class="tbd">Instagram</a></span>
+    <span>diwaliplaydatesingapore.com</span>
   </div>
 </footer>
 
@@ -299,7 +298,7 @@
   const f=document.getElementById('waitlist');
   f.addEventListener('submit',async e=>{
     e.preventDefault();
-    if(f.action.includes('YOUR_FORM_ID')){f.style.display='none';const t=document.getElementById('thanks');t.textContent='🪔 Our waitlist opens very soon — follow us on Instagram for the announcement!';t.style.display='block';return}
+    if(f.action.includes('YOUR_FORM_ID')){f.style.display='none';const t=document.getElementById('thanks');t.textContent='🪔 Thanks! Our sign-up form is being set up — please check back in a day or two.';t.style.display='block';return}
     const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});
     if(r.ok){f.style.display='none';document.getElementById('thanks').style.display='block'}
     else alert('Something went wrong — please email us instead.');
