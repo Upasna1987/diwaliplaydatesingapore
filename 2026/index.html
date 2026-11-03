@@ -129,7 +129,8 @@
 
   /* gallery */
   .wide{width:100%;border-radius:28px;border:8px solid #fff;box-shadow:0 18px 40px rgba(31,59,56,.15);margin-top:30px}
-  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+  .gallery{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+  .gallery img.wide{grid-column:span 2;aspect-ratio:2.06/1}
   .gallery img.tall{grid-row:span 2;aspect-ratio:auto;height:100%}
   .gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 30%;border-radius:20px;border:5px solid #fff;box-shadow:0 8px 20px rgba(31,59,56,.12)}
   @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
@@ -229,7 +230,7 @@
     <img class="wide" src="/images/k-group.jpg" alt="Everyone together at Diwali Playdate 2026" loading="lazy">
     <div class="gallery">
       <img src="/images/k-orange-walk.jpg" alt="A little girl twirling down the runway in her orange lehenga" loading="lazy" class="tall" style="object-position:50% 40%">
-      <img src="/images/k-mic.jpg" alt="" loading="lazy">
+      <img src="/images/k-mic.jpg" alt="Kids at the mic during the puja" loading="lazy" class="wide" style="object-position:50% 35%">
       <img src="/images/k-blond.jpg" alt="" loading="lazy" style="object-position:48% 30%">
       <img src="/images/k-teal.jpg" alt="" loading="lazy">
       <img src="/images/k-toddler.jpg" alt="" loading="lazy">
@@ -237,6 +238,8 @@
       <img src="/images/k-blue.jpg" alt="" loading="lazy" style="object-position:50% 20%">
       <img src="/images/k-girl-drawing.jpg" alt="" loading="lazy" style="object-position:85% 40%">
       <img src="/images/k-diya-boy.jpg" alt="" loading="lazy">
+      <img src="/images/k-puja-thali-kids.jpg" alt="Kids lighting their puja thali at the Ganesh–Lakshmi puja" loading="lazy" class="wide">
+      <img src="/images/k-aarti-wonder.jpg" alt="Kids watching the aarti in wonder, diyas in hand" loading="lazy" class="wide">
     </div>
     <a class="credit" href="https://www.instagram.com/beard.and.butter/" target="_blank" rel="noopener">
       <img src="/images/photographer.jpg" alt="Kushagra Saran, photographer">
