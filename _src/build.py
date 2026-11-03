@@ -25,14 +25,14 @@ cta='''<section style="padding:30px 0 70px"><div class="wrap center">
   <p style="margin-top:22px"><a href="/waitlist/" class="btn btn-rose">Join the 2027 waitlist</a> <a href="/activities/" class="btn btn-ghost">See the activities</a></p>
 </div></section>'''
 PAGES=[
- ('', 'Diwali Playdate Singapore | Deepavali Activities &amp; Event for Kids 2027', None, blocks),
- ('activities','Deepavali Activities for Kids in Singapore | Diwali Playdate','Rangoli, diya painting, henna, puja thali, Knock the Raavan, Ramayan storytime, a kids fashion show and Bollywood dance: see every activity and the evening itinerary.',[named['activities'],named['itinerary'],cta]),
+ ('', 'Diwali Playdate Singapore | Deepavali Events for Kids 2027', None, blocks),
+ ('activities','Deepavali Activities &amp; Crafts for Kids, Toddlers &amp; Preschoolers | Singapore','Rangoli, diya painting, henna, puja thali, Knock the Raavan, Ramayan storytime, a kids fashion show and Bollywood dance: see every activity and the evening itinerary.',[named['activities'],named['itinerary'],cta]),
  ('2026','Diwali Playdate 2026 Photos | Deepavali Event for Kids Singapore','Highlights from Diwali Playdate 2026 at Vida Lounge, Vidacity, Pasir Ris: rangoli, crafts, the fashion show and the Bollywood dance party.',[named['2026-highlights'],cta]),
  ('about','Meet the Organisers | Diwali Playdate Singapore','Diwali Playdate Singapore is organised by two Singapore mums and entrepreneurs, Rinie Gupta of Yawn to Dawn and Sana of SympleHost.',[named['organisers'],why,cta]),
  ('talent-show','Kids Talent Show Nominations | Diwali Playdate Singapore','Nominate your child (ages 1–10) for the Diwali Playdate 2027 talent show. Every performer gets a certificate.',[named['talent-show']]),
  ('volunteer','Volunteer at Diwali Playdate Singapore','Run a craft or activity station at Diwali Playdate 2027. Pick your station and send us a short role-play video.',[named['volunteer']]),
  ('partner','Sponsor or Partner with Diwali Playdate Singapore','Sponsors, vendors, goodie-bag partners and community groups: reach families celebrating Deepavali in Singapore.',[named['partner']]),
- ('faq','FAQ | Diwali Playdate Singapore','Ages, tickets, refunds, food, what to wear and more: answers to common questions about Diwali Playdate Singapore.',[named['faq'],cta]),
+ ('faq','Diwali Party for Kids in Singapore: FAQ | Diwali Playdate','Ages, tickets, refunds, food, what to wear and more: answers to common questions about Diwali Playdate Singapore.',[named['faq'],cta]),
  ('waitlist','Join the 2027 Waitlist | Diwali Playdate Singapore','Join the Diwali Playdate Singapore 2027 waitlist for first access to tickets and early-bird pricing.',[named['join-waitlist']]),
 ]
 navhtml='''<nav>
