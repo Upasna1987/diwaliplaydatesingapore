@@ -60,6 +60,7 @@ for slug,title,desc,parts in PAGES:
         h=re.sub(r'<meta property="og:description" content="[^"]*">',f'<meta property="og:description" content="{desc}">',h)
     h=re.sub(r'<meta property="og:title" content="[^"]*">',f'<meta property="og:title" content="{title}">',h)
     h=h.replace('<link rel="canonical" href="https://diwaliplaydatesingapore.com/">',f'<link rel="canonical" href="{url}">')
+    h=h.replace('<link rel="canonical" href="'+url+'">','<link rel="canonical" href="'+url+'">\n<link rel="alternate" hreflang="en-SG" href="'+url+'">\n<link rel="alternate" hreflang="x-default" href="'+url+'">')
     h=h.replace('<meta property="og:url" content="https://diwaliplaydatesingapore.com/">',f'<meta property="og:url" content="{url}">')
     for b in ld_blocks(h):
         t=json.loads(re.search(r'>(.*)</script>',b,re.S).group(1))['@type']
