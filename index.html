@@ -52,7 +52,7 @@
   .hero{padding:40px 0 70px;overflow:hidden}
   .hang{position:absolute;top:-6px;width:150px;pointer-events:none}
   .hang.l{left:0}.hang.r{right:0}
-  @media(max-width:860px){.hang{width:90px}}
+  @media(max-width:1200px){.hang{width:100px}}@media(max-width:860px){.hang{width:80px}}
   .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
   .hero-text{text-align:center;padding-top:30px}
   .hero-text .kicker{font-family:Fraunces,serif;font-weight:700;letter-spacing:.18em;color:var(--teal-d);font-size:20px}
@@ -92,8 +92,8 @@
   .itin{max-width:820px;margin:36px auto 0;display:grid;gap:12px}
   .row{display:flex;align-items:center;gap:18px;border-radius:20px;padding:12px 18px 12px 12px}
   .row:nth-child(3n+1){background:var(--pink)}.row:nth-child(3n+2){background:var(--cream)}.row:nth-child(3n){background:var(--mint)}
-  .badge{flex:0 0 88px;height:62px;border-radius:16px;display:grid;place-items:center;color:#fff;font-family:Fraunces,serif;font-weight:800;font-size:20px;line-height:1;text-align:center}
-  .badge small{display:block;font-size:13px;font-weight:700}
+  .badge{flex:0 0 108px;height:54px;white-space:nowrap;border-radius:16px;display:flex;align-items:baseline;justify-content:center;padding-top:17px;color:#fff;font-family:Fraunces,serif;font-weight:800;font-size:19px;line-height:1;text-align:center}
+  .badge small{font-size:14px;font-weight:700;margin-left:3px}
   .row:nth-child(3n+1) .badge{background:var(--rose)}.row:nth-child(3n+2) .badge{background:var(--orange)}.row:nth-child(3n) .badge{background:var(--teal)}
   .row b{font-family:Fraunces,serif;font-size:21px;color:var(--teal-d);flex:1}
   .row b i{display:block;font-family:Nunito,sans-serif;font-weight:600;font-size:14px;color:var(--muted)}
@@ -147,6 +147,11 @@
   @media(max-width:640px){form{grid-template-columns:1fr;padding:22px}}
   .thanks{display:none;background:var(--white);color:var(--teal-d);border-radius:26px;padding:30px;margin-top:32px;max-width:780px;font-size:19px;font-family:Fraunces,serif;font-weight:700}
 
+  .howto{max-width:780px;margin:30px auto 0;background:var(--cream);border-radius:22px;padding:22px 26px}
+  .howto h3{font-size:22px;margin-bottom:10px}
+  .howto ol{padding-left:22px;display:grid;gap:8px}.howto ul{padding-left:20px;margin-top:6px;display:grid;gap:4px}
+  .xform{margin:22px auto 0;border:2px solid var(--line);box-shadow:0 10px 30px rgba(31,59,56,.08)}
+  #talent .thanks,#volunteer .thanks{margin:22px auto 0;border:2px solid var(--line)}
   footer{background:var(--ivory);color:var(--muted);font-size:15px}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:24px 24px 30px}
   footer a{color:var(--rose);font-weight:700}
@@ -161,7 +166,8 @@
       <li><a href="#activities">Activities</a></li>
       <li><a href="#evening">Itinerary</a></li>
       <li><a href="#gallery">2026</a></li>
-      <li><a href="#partner">Partner</a></li>
+      <li><a href="#talent">Talent show</a></li>
+      <li><a href="#volunteer">Volunteer</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#join" class="btn btn-rose">Join waitlist</a></li>
     </ul>
@@ -220,18 +226,18 @@
   <div class="wrap center">
     <span class="ribbon">Event itinerary</span>
     <h2>How the evening <span class="script">flows</span></h2>
-    <p class="lead">This is how 2026 ran. Expect a similar flow in 2027.</p>
+    <p class="lead">Based on our 2026 event. Timings are subject to change for 2027.</p>
   </div>
   <div class="wrap">
     <div class="itin">
-      <div class="row"><div class="badge">5:00<small>pm</small></div><b>Gates open</b></div>
+      <div class="row"><div class="badge">5:00<small>pm</small></div><b>Gates open</b><img src="images/deco-gate.png" alt=""></div>
       <div class="row"><div class="badge">5:15<small>pm</small></div><b>Welcome note &amp; puja</b><img src="images/deco-diya.png" alt=""></div>
       <div class="row"><div class="badge">5:30<small>pm</small></div><b>Ramayan storytelling</b><img src="images/deco-ramsita.png" alt=""></div>
-      <div class="row"><div class="badge">5:45<small>pm</small></div><b>Rangoli decoration</b></div>
+      <div class="row"><div class="badge">5:45<small>pm</small></div><b>Rangoli decoration</b><img src="images/deco-rangoli.png" alt=""></div>
       <div class="row"><div class="badge">6:15<small>pm</small></div><b>Best dressed competition<i>(bring your A game!)</i></b><img src="images/deco-bestdressed.png" alt=""></div>
       <div class="row"><div class="badge">6:45<small>pm</small></div><b>Bollywood dance workshop</b><img src="images/deco-dancers.png" alt=""></div>
-      <div class="row"><div class="badge">7:15<small>pm</small></div><b>Free &amp; easy dance party</b></div>
-      <div class="row"><div class="badge">8:00<small>pm</small></div><b>End of event</b></div>
+      <div class="row"><div class="badge">7:15<small>pm</small></div><b>Free &amp; easy dance party</b><img src="images/deco-disco.png" alt=""></div>
+      <div class="row"><div class="badge">8:00<small>pm</small></div><b>End of event</b><img src="images/deco-end.png" alt=""></div>
     </div>
     <div class="note-box">All craft &amp; game booths + food counters are open from 5–8 pm<br><span>PS. Bring pre-loved books for the Swap-Party ❤️</span></div>
   </div>
@@ -239,7 +245,7 @@
 
 <section>
   <div class="wrap two">
-    <img class="why-img" src="images/k-organisers.jpg" alt="The organisers with their kids at Diwali Playdate 2026" loading="lazy">
+    <img class="why-img" src="images/k-rinie-sana.jpg" alt="Rinie and Sana hosting Diwali Playdate 2026" loading="lazy" style="object-fit:cover;aspect-ratio:4/3">
     <div>
       <span class="ribbon teal">Why we started</span>
       <h2>Deepavali, the way <span class="script">we remember it</span></h2>
@@ -252,6 +258,17 @@
       </div>
       <p class="signoff" style="text-align:left">With love, <span>Rinie &amp; Sana</span></p>
     </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap two">
+    <div>
+      <span class="ribbon orange">Make friends</span>
+      <h2>Come for the kids, <span class="script">stay for the friendships</span></h2>
+      <p class="lead">Diwali Playdate isn't just for the little ones. Connect with other parents and mums, swap stories and tips, and make friends you'll be celebrating with for years to come.</p>
+    </div>
+    <img class="why-img" src="images/k-organisers.jpg" alt="Mums and kids making friends at Diwali Playdate 2026" loading="lazy" style="transform:rotate(1.5deg)">
   </div>
 </section>
 
@@ -286,9 +303,78 @@
       <div class="pcard"><h3>Sponsor</h3><p>Brand the evening, a booth or the goodie bags.</p></div>
       <div class="pcard"><h3>Vendor</h3><p>Bring a stall: toys, books, clothing, sweets.</p></div>
       <div class="pcard"><h3>Goodie bags</h3><p>Put a sample or voucher in every family's hands.</p></div>
-      <div class="pcard"><h3>Volunteer</h3><p>Run a booth and help the kids make magic.</p></div>
+      <div class="pcard"><h3>Volunteer</h3><p>Run a booth and help the kids make magic. <a href="#volunteer">Apply here</a>.</p></div>
     </div>
     <a href="#join" class="btn btn-teal">Let's talk</a>
+  </div>
+</section>
+
+<section id="talent" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="center"><span class="ribbon orange">Talent show</span>
+    <h2>Nominate a <span class="script">little star</span></h2>
+    <p class="lead">Does your child love to dance, sing, play an instrument or recite a poem? Nominate them for the 2027 talent show!</p></div>
+    <div class="howto">
+      <h3>How it works</h3>
+      <ol>
+        <li><b>Open to kids aged 1–10.</b> Solo acts, siblings or a group of friends are all welcome. For a group, list every child's name.</li>
+        <li><b>Keep it short and sweet:</b> up to 2 minutes per act.</li>
+        <li><b>Every performer gets a certificate.</b> Please type each child's full name exactly as you'd like it printed.</li>
+        <li><b>Need music?</b> Tell us the song now. We'll ask for the track (MP3 or YouTube link) closer to the day.</li>
+        <li><b>A practice video is optional</b> but helps us plan the running order. Share a link if you have one.</li>
+        <li>We'll confirm each child's slot once the 2027 date and venue are announced.</li>
+      </ol>
+    </div>
+    <form class="xform" data-form="Talent show">
+      <div><label>Parent's name</label><input name="parent_name" required></div>
+      <div><label>Email</label><input name="email" type="email" required></div>
+      <div><label>WhatsApp</label><input name="phone" type="tel" placeholder="+65" required></div>
+      <div><label>Child's age</label><select name="child_age" required><option value="">Age…</option><option>Under 1</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>Over 10</option></select></div>
+      <div class="full"><label>Child's full name, as it should appear on the certificate</label><input name="child_name" placeholder="For a group, list every child's full name" required></div>
+      <div><label>Talent</label><select name="talent" required><option value="">Choose…</option><option>Dance</option><option>Singing</option><option>Musical instrument</option><option>Poem or recitation</option><option>Storytelling</option><option>Other</option></select></div>
+      <div><label>Song or act title</label><input name="act_title" placeholder="e.g. Radha Kaise Na Jale"></div>
+      <div><label>Will they need music played?</label><select name="music"><option>Yes, we'll send the track</option><option>No music needed</option></select></div>
+      <div><label>Practice video link (optional)</label><input name="video_link" type="url" placeholder="Google Drive / YouTube link"></div>
+      <div class="full"><label>Anything we should know?</label><textarea name="message" rows="2" placeholder="Shy first-timer? Needs a parent on stage? Tell us!"></textarea></div>
+      <div class="full"><button class="btn btn-rose" type="submit">Send nomination</button></div>
+    </form>
+    <div class="thanks">🌟 Nomination received! We'll be in touch to confirm the slot once the 2027 date is set.</div>
+  </div>
+</section>
+
+<section id="volunteer">
+  <div class="wrap">
+    <div class="center"><span class="ribbon teal">Volunteer</span>
+    <h2>Run a station <span class="script">with us</span></h2>
+    <p class="lead">Our volunteers make the magic happen. Pick the station you'd love to run and show us how you'd bring it to life.</p></div>
+    <div class="howto">
+      <h3>How to apply</h3>
+      <ol>
+        <li><b>Pick your station.</b> Choose a first and second choice from the activities on this page.</li>
+        <li><b>Record a short role-play video (1–2 minutes).</b> A phone video is perfect. Pretend a small group of 4–6 year olds has just walked up to your station:
+          <ul>
+            <li>Welcome them warmly and introduce yourself.</li>
+            <li>Explain the activity in simple, kid-friendly words.</li>
+            <li>Show how it's done step by step. Props from home are great!</li>
+            <li>Show how you'd handle a tricky moment, like a child upset that their tower fell, a toddler who wants to grab everything, or a queue forming.</li>
+          </ul></li>
+        <li><b>Upload the video</b> to Google Drive, YouTube (unlisted) or Dropbox, set sharing to <i>"Anyone with the link can view"</i>, and paste the link below.</li>
+        <li><b>Plan to arrive early.</b> Volunteers arrive before doors open for setup and a short briefing, and help pack up at the end.</li>
+        <li>Under 18? Please fill this in with a parent.</li>
+      </ol>
+    </div>
+    <form class="xform" data-form="Volunteers">
+      <div><label>Your name</label><input name="name" required></div>
+      <div><label>Email</label><input name="email" type="email" required></div>
+      <div><label>WhatsApp</label><input name="phone" type="tel" placeholder="+65" required></div>
+      <div><label>Age group</label><select name="age_group" required><option value="">Choose…</option><option>Under 18 (with parent's OK)</option><option>18 or over</option></select></div>
+      <div><label>First-choice station</label><select name="station_1" required><option value="">Choose…</option><option>Knock the Raavan</option><option>Diya Painting</option><option>Henna Corner</option><option>Rangoli Making</option><option>Decorate a Puja Thali</option><option>Puja &amp; Ramayan storytelling</option><option>Best Dressed / fashion walk</option><option>Bollywood Dance workshop</option><option>Snack &amp; drinks counter</option><option>Welcome &amp; check-in</option><option>Book swap</option></select></div>
+      <div><label>Second-choice station</label><select name="station_2"><option value="">Choose…</option><option>Knock the Raavan</option><option>Diya Painting</option><option>Henna Corner</option><option>Rangoli Making</option><option>Decorate a Puja Thali</option><option>Puja &amp; Ramayan storytelling</option><option>Best Dressed / fashion walk</option><option>Bollywood Dance workshop</option><option>Snack &amp; drinks counter</option><option>Welcome &amp; check-in</option><option>Book swap</option></select></div>
+      <div class="full"><label>Role-play video link</label><input name="video_link" type="url" placeholder="https://drive.google.com/…" required></div>
+      <div class="full"><label>Any experience with kids or events? (optional)</label><textarea name="experience" rows="2"></textarea></div>
+      <div class="full"><button class="btn btn-teal" type="submit">Register as a volunteer</button></div>
+    </form>
+    <div class="thanks">🪔 Thank you! We'll watch your video and get back to you soon.</div>
   </div>
 </section>
 
@@ -313,7 +399,7 @@
     <h2>Join the <span class="script">2027 waitlist</span></h2>
     <p class="lead">We're securing our 2027 venue now. Tickets open as soon as it's confirmed, and waitlist families get first access and early-bird pricing.</p>
 
-    <form id="waitlist">
+    <form id="waitlist" data-form="Waitlist">
       <div><label for="name">Your name</label><input id="name" name="name" required></div>
       <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
       <div><label for="phone">WhatsApp (optional)</label><input id="phone" name="phone" type="tel" placeholder="+65"></div>
@@ -361,6 +447,7 @@
     try{
       if(SHEET_URL.startsWith('PASTE')) throw new Error('not connected');
       const d=new URLSearchParams(new FormData(f));
+      d.set('form','Waitlist');
       d.set('kid_ages',[...ageBox.querySelectorAll('select')].map(x=>x.value).join(', '));
       await fetch(SHEET_URL,{method:'POST',mode:'no-cors',body:d});
       f.style.display='none'; t.style.display='block';
@@ -369,6 +456,19 @@
       t.textContent='🪔 Thanks! Our sign-up form is being set up. In the meantime, follow @diwaliplaydate.singapore on Instagram for the announcement.';
       t.style.display='block';
     }
+  });
+  document.querySelectorAll('.xform').forEach(xf=>{
+    const done=xf.nextElementSibling;
+    xf.addEventListener('submit',async e=>{
+      e.preventDefault();
+      const b=xf.querySelector('button'); b.disabled=true; b.textContent='Sending…';
+      try{
+        if(SHEET_URL.startsWith('PASTE')) throw new Error('not connected');
+        const d=new URLSearchParams(new FormData(xf)); d.set('form',xf.dataset.form);
+        await fetch(SHEET_URL,{method:'POST',mode:'no-cors',body:d});
+      }catch(err){ done.textContent='🪔 Thanks! This form is being set up. Please check back soon, or message us on Instagram @diwaliplaydate.singapore.'; }
+      xf.style.display='none'; done.style.display='block';
+    });
   });
 </script>
 </body>
