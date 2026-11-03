@@ -120,6 +120,8 @@
   input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:2px solid #D9CBB0;font:inherit;background:#fff}
   input:focus,select:focus,textarea:focus{outline:none;border-color:var(--purple)}
   form button{cursor:pointer}
+  .ages{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+  .ages label{font-weight:500;font-size:13px;margin-bottom:4px;color:var(--muted)}
   @media(max-width:640px){form{grid-template-columns:1fr;padding:22px}}
   .thanks{display:none;background:var(--cream2);color:var(--navy);border-radius:24px;padding:30px;margin-top:32px;max-width:780px;font-size:19px;font-family:Fredoka,sans-serif}
 
@@ -281,8 +283,7 @@
     <h2>Join the <span class="accent">2027 waitlist</span></h2>
     <p class="lead">We're securing our 2027 venue now. Tickets open as soon as it's confirmed, and waitlist families get first access and early-bird pricing.</p>
 
-    <!-- Replace YOUR_FORM_ID with a form endpoint so sign-ups are saved -->
-    <form id="waitlist" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form id="waitlist">
       <div><label for="name">Your name</label><input id="name" name="name" required></div>
       <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
       <div><label for="phone">WhatsApp (optional)</label><input id="phone" name="phone" type="tel" placeholder="+65"></div>
@@ -290,7 +291,9 @@
         <select id="interest" name="interest">
           <option>Attending with my kids</option><option>Sponsoring</option><option>Being a vendor</option><option>Volunteering</option>
         </select></div>
-      <div class="full"><label for="kids">Number and ages of kids</label><input id="kids" name="kids" placeholder="e.g. 2 kids, ages 3 and 6"></div>
+      <div><label for="adults">Adults</label><select id="adults" name="adults"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+      <div><label for="kidcount">Kids</label><select id="kidcount" name="kids"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+      <div class="full"><label>Kids' ages</label><div id="ages" class="ages"></div></div>
       <div class="full"><label for="msg">Anything else?</label><textarea id="msg" name="message" rows="3"></textarea></div>
       <div class="full"><button class="btn btn-orange" type="submit">Join the waitlist</button></div>
     </form>
@@ -307,13 +310,33 @@
 </footer>
 
 <script>
+  // Google Apps Script web app that appends rows to the "Diwali Playdate 2027 Waitlist" sheet
+  const SHEET_URL='PASTE_APPS_SCRIPT_URL';
   const f=document.getElementById('waitlist'), t=document.getElementById('thanks');
+  const ageBox=document.getElementById('ages'), kc=document.getElementById('kidcount');
+  const AGES=['Under 1','1','2','3','4','5','6','7','8','9','10','Over 10'];
+  function renderAges(){
+    const keep=[...ageBox.querySelectorAll('select')].map(x=>x.value), n=+kc.value;
+    ageBox.innerHTML='';
+    for(let i=0;i<n;i++){
+      const d=document.createElement('div');
+      d.innerHTML=`<label for="age${i}">Kid ${i+1}</label><select id="age${i}" class="age" required><option value="">Age…</option>${AGES.map(a=>`<option>${a}</option>`).join('')}</select>`;
+      ageBox.appendChild(d); if(keep[i]) d.querySelector('select').value=keep[i];
+    }
+  }
+  kc.addEventListener('change',renderAges); renderAges();
   f.addEventListener('submit',async e=>{
     e.preventDefault();
-    if(f.action.includes('YOUR_FORM_ID')){f.style.display='none';t.textContent='🪔 Thanks! Our sign-up form is being set up. In the meantime, follow @diwaliplaydate.singapore on Instagram for the announcement.';t.style.display='block';return}
-    const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});
-    if(r.ok){f.style.display='none';t.style.display='block'}
-    else{t.textContent='Something went wrong. Please message us on Instagram instead.';t.style.display='block'}
+    const b=f.querySelector('button'); b.disabled=true; b.textContent='Sending…';
+    try{
+      if(SHEET_URL.startsWith('PASTE')) throw new Error('not connected');
+      await fetch(SHEET_URL,{method:'POST',mode:'no-cors',body:(()=>{const d=new URLSearchParams(new FormData(f));d.set('kid_ages',[...ageBox.querySelectorAll('select')].map(x=>x.value).join(', '));return d})()});
+      f.style.display='none'; t.style.display='block';
+    }catch(err){
+      f.style.display='none';
+      t.textContent='🪔 Thanks! Our sign-up form is being set up. In the meantime, follow @diwaliplaydate.singapore on Instagram for the announcement.';
+      t.style.display='block';
+    }
   });
 </script>
 </body>
