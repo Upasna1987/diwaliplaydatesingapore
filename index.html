@@ -179,6 +179,7 @@
   .thanks{display:none;background:var(--white);color:var(--teal-d);border-radius:26px;padding:30px;margin-top:32px;max-width:780px;font-size:19px;font-family:Fraunces,serif;font-weight:700}
 
   .howto{max-width:780px;margin:30px auto 0;background:var(--cream);border-radius:22px;padding:22px 26px}
+  .hint{font-size:13px;color:var(--muted);margin-top:6px;font-style:italic}
   .howto a{color:var(--rose);font-weight:800}
   .howto h3{font-size:22px;margin-bottom:10px}
   .howto ol{padding-left:22px;display:grid;gap:8px}.howto ul{padding-left:20px;margin-top:6px;display:grid;gap:4px}
@@ -441,8 +442,10 @@
       <div><label>Email</label><input name="email" type="email" required></div>
       <div><label>WhatsApp</label><input name="phone" type="tel" placeholder="+65" required></div>
       <div><label>Age group</label><select name="age_group" required><option value="">Choose…</option><option>Under 18 (with parent's OK)</option><option>18 or over</option></select></div>
-      <div><label>First-choice station</label><select name="station_1" required><option value="">Choose…</option><option>Knock the Raavan</option><option>Diya Painting</option><option>Henna &amp; Bangle Corner</option><option>Rangoli Making</option><option>Decorate a Puja Thali</option><option>Puja &amp; Ramayan</option><option>Best Dressed fashion show</option><option>Bollywood Dance</option><option>Snack &amp; drinks counter</option><option>Welcome &amp; check-in</option><option>Book stall</option></select></div>
-      <div><label>Second-choice station</label><select name="station_2"><option value="">Choose…</option><option>Knock the Raavan</option><option>Diya Painting</option><option>Henna &amp; Bangle Corner</option><option>Rangoli Making</option><option>Decorate a Puja Thali</option><option>Puja &amp; Ramayan</option><option>Best Dressed fashion show</option><option>Bollywood Dance</option><option>Snack &amp; drinks counter</option><option>Welcome &amp; check-in</option><option>Book stall</option></select></div>
+      <div><label>First-choice station</label><select name="station_1" required><option value="">Choose…</option><option>Knock the Raavan</option><option>Diya Painting</option><option>Henna &amp; Bangle Corner</option><option>Rangoli Making</option><option>Decorate a Puja Thali</option><option>Puja &amp; Ramayan</option><option>Best Dressed fashion show</option><option>Bollywood Dance</option><option>Snack &amp; drinks counter</option><option>Welcome &amp; check-in</option><option>Book stall</option><option value="Other">Other: propose your own activity</option></select></div>
+      <div><label>Second-choice station</label><select name="station_2"><option value="">Choose…</option><option>Knock the Raavan</option><option>Diya Painting</option><option>Henna &amp; Bangle Corner</option><option>Rangoli Making</option><option>Decorate a Puja Thali</option><option>Puja &amp; Ramayan</option><option>Best Dressed fashion show</option><option>Bollywood Dance</option><option>Snack &amp; drinks counter</option><option>Welcome &amp; check-in</option><option>Book stall</option><option value="Other">Other: propose your own activity</option></select></div>
+      <div class="full own" style="display:none"><label>Your activity idea</label><textarea name="own_activity" rows="2" placeholder="What would you run, what's needed, and which ages is it for?"></textarea>
+        <p class="hint">Please note: new activity ideas are reviewed for volunteer shortlisting only and may not be included in the final event.</p></div>
       <div class="full"><label>Role-play video link</label><input name="video_link" type="url" placeholder="https://drive.google.com/…" required></div>
       <div class="full"><label>Any experience with kids or events? (optional)</label><textarea name="experience" rows="2"></textarea></div>
       <div class="full"><button class="btn btn-teal" type="submit">Register as a volunteer</button></div>
@@ -551,6 +554,10 @@
       xf.style.display='none'; done.style.display='block';
     });
   });
+  document.querySelectorAll('select[name="station_1"],select[name="station_2"]').forEach(sel=>sel.addEventListener('change',()=>{
+    const f=sel.form, show=[...f.querySelectorAll('select[name^="station_"]')].some(x=>x.value==='Other');
+    const box=f.querySelector('.own'); box.style.display=show?'block':'none'; box.querySelector('textarea').required=show;
+  }));
 </script>
 </body>
 </html>
