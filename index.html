@@ -140,6 +140,9 @@
   .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .pair img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;border:6px solid #fff;box-shadow:0 12px 28px rgba(31,59,56,.15)}
   .pair img:first-child{transform:rotate(-2deg)}.pair img:last-child{transform:rotate(2deg);margin-top:30px}
+  .trio{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:190px;gap:14px}
+  .trio img{width:100%;height:100%;object-fit:cover;border-radius:22px;border:6px solid #fff;box-shadow:0 12px 28px rgba(31,59,56,.15)}
+  .trio img.span2{grid-column:span 2}
   .friends{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(4,1fr);grid-auto-rows:250px;gap:14px;margin-top:40px}
   @media(max-width:860px){.friends{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}}
   .friends img.wide{grid-column:span 2;aspect-ratio:auto;height:100%}
@@ -276,9 +279,10 @@
       <h2>Plenty to keep <span class="script">little hands busy</span></h2>
       <p class="lead">With craft tables, games, stories, a runway and a dance floor, there's always something new to try. Kids stay engaged all evening, moving happily from one station to the next, while parents get to relax, sip chai and catch up.</p>
     </div>
-    <div class="pair">
+    <div class="trio">
       <img src="/images/e-busy-1.jpg" alt="Girls concentrating on decorating their puja thalis" loading="lazy" style="object-position:62% 40%">
       <img src="/images/e-busy-2.jpg" alt="A girl colouring her thali at the craft table" loading="lazy" style="object-position:82% 50%">
+      <img src="/images/e-ganesha-plush.jpg" alt="A cuddly baby Ganesha beside a plate of flower petals" loading="lazy" class="span2" style="object-position:45% 45%">
     </div>
   </div>
 </section>
