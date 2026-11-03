@@ -169,11 +169,21 @@
   .credit small{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
   .credit b{font-family:Fraunces,serif;color:var(--teal-d);font-size:17px}
   .credit i{font-style:normal;color:var(--rose);font-weight:800;font-size:14px}
+  .loved{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+  .loved span{background:var(--white);border:2px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14.5px}
   .stats{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:24px}
   .stats div{background:var(--pink);border-radius:20px;padding:14px 24px;min-width:220px}
   .stats div:nth-child(2){background:var(--mint)}
   .stats b{display:block;font-family:Fraunces,serif;font-size:30px;color:var(--rose)}
   .stats span{font-size:14px;color:var(--muted);font-weight:700}
+  .tquotes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+  @media(max-width:980px){.tquotes{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.tquotes{grid-template-columns:1fr}}
+  .tq{position:relative;margin:0;background:#fff;border:2px solid var(--line);border-radius:26px;padding:34px 24px 24px;display:flex;flex-direction:column;box-shadow:0 12px 30px rgba(216,6,77,.07)}
+  .tq::before{content:"\201C";position:absolute;top:-6px;left:18px;font-family:Fraunces,serif;font-size:90px;line-height:1;color:var(--rose);opacity:.9}
+  .tq .stars{color:var(--gold);letter-spacing:3px;font-size:15px;margin-bottom:10px}
+  .tq blockquote{font-family:Fraunces,serif;font-size:19px;line-height:1.45;color:var(--teal-d);font-weight:600;flex:1}
+  .tq figcaption{margin-top:16px;padding-top:12px;border-top:1px dashed var(--line);font-size:13.5px;font-weight:800;color:var(--rose)}
   .quotes{columns:3 260px;column-gap:18px;margin-top:36px}
   .q{break-inside:avoid;margin:0 0 18px;background:var(--cream);border-radius:22px;padding:22px 24px}
   .q:nth-child(3n+2){background:var(--pink)}.q:nth-child(3n){background:var(--mint)}
@@ -369,20 +379,27 @@
   <div class="wrap center">
     <span class="ribbon">What parents said</span>
     <h2>Loved by <span class="script">families</span></h2>
-    <p class="lead">From our 2026 feedback form.</p>
+        <div class="loved">
+      <span>🪔 The right mix of culture and festive fun</span>
+      <span>📖 Kids loved the Ramayan storytime &amp; aarti</span>
+      <span>🎨 So many stations to keep kids busy</span>
+      <span>💃 The fashion show &amp; dance party</span>
+      <span>🍎 Kid-friendly snacks, especially the fruit</span>
+      <span>💍 The bangle bar was a hit with the little ones</span>
+      <span>✨ Thoughtful touches everywhere, from petal rangoli for tiny tots up</span>
+    </div>
+    <p class="lead" style="font-size:14px;margin-top:8px">2026 highlights: what parents told us they loved, and what we saw on the night.</p>
     <div class="stats">
       <div><b>10 of 11</b><span>families said they'd come back in 2027</span></div>
       <div><b>9 of 11</b><span>gave the event our top rating</span></div>
     </div>
   </div>
   <div class="wrap">
-    <div class="quotes">
-      <figure class="q big"><blockquote>“Honestly, words can't do justice to how good it was. We had an absolute blast. The timing, activities, music, and the warmth and welcome from Rinie and Sana were absolutely fantastic. I wasn't sure if my 16-month-old was too young, but he was dancing away right till the end!”</blockquote><figcaption>A parent at Diwali Playdate 2026</figcaption></figure>
-      <figure class="q"><blockquote>“The thoughtfulness behind each part of the evening was incredible, like petals for the rangoli for the tiny tots. We came home with full bellies and hearts full of gratitude.”</blockquote><figcaption>A parent at Diwali Playdate 2026</figcaption></figure>
-      <figure class="q"><blockquote>“Booths were amazing, and the fashion show was sooo fun!”</blockquote><figcaption>A parent at Diwali Playdate 2026</figcaption></figure>
-      <figure class="q"><blockquote>“The number of activities kept the kids occupied across every station.”</blockquote><figcaption>A parent at Diwali Playdate 2026</figcaption></figure>
-      <figure class="q"><blockquote>“This should be a yearly event!”</blockquote><figcaption>A parent at Diwali Playdate 2026</figcaption></figure>
-      <figure class="q"><blockquote>“It was extremely fun. Would love to join again next year.”</blockquote><figcaption>A parent at Diwali Playdate 2026</figcaption></figure>
+    <div class="tquotes">
+      <figure class="tq"><blockquote>We had an absolute blast. I wasn't sure if my 16-month-old was too young, but he was dancing away right till the end!</blockquote><figcaption>Mum of a 16-month-old</figcaption></figure>
+      <figure class="tq"><blockquote>Booths were amazing, and the fashion show was sooo fun!</blockquote><figcaption>Parent, Diwali Playdate 2026</figcaption></figure>
+      <figure class="tq"><blockquote>The number of activities kept the kids occupied across every station.</blockquote><figcaption>Parent, Diwali Playdate 2026</figcaption></figure>
+      <figure class="tq"><blockquote>This should be a yearly event!</blockquote><figcaption>Parent, Diwali Playdate 2026</figcaption></figure>
     </div>
   </div>
 </section>
