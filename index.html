@@ -132,6 +132,13 @@
   .org p{color:var(--muted);font-size:15.5px}
   .org img.fam{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:20px;margin-top:18px}
   .org a{display:inline-block;margin-top:12px;font-weight:800;color:var(--teal);text-decoration:none}
+  .credit{display:flex;align-items:center;gap:14px;width:max-content;max-width:100%;margin:26px auto 0;padding:10px 22px 10px 10px;background:var(--white);border:2px solid var(--line);border-radius:999px;text-decoration:none;box-shadow:0 8px 20px rgba(31,59,56,.08);transition:transform .15s}
+  .credit:hover{transform:translateY(-2px)}
+  .credit img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid var(--rose)}
+  .credit span{display:flex;flex-direction:column;line-height:1.25}
+  .credit small{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+  .credit b{font-family:Fraunces,serif;color:var(--teal-d);font-size:17px}
+  .credit i{font-style:normal;color:var(--rose);font-weight:800;font-size:14px}
   .note{color:var(--muted);font-size:13.5px;margin-top:14px}
 
   .partner{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -341,7 +348,11 @@
       <img src="images/k-diya-boy.jpg" alt="" loading="lazy">
       <img src="images/k-girl-drawing.jpg" alt="" loading="lazy">
     </div>
-    <p class="note">Photos: Kushagra Saran Photography (<a href="https://www.instagram.com/beard.and.butter/" target="_blank" rel="noopener">@beard.and.butter</a>). See more moments and connect with us on Instagram at <a href="https://www.instagram.com/diwaliplaydate.singapore/" target="_blank" rel="noopener">@diwaliplaydate.singapore</a>.</p>
+    <a class="credit" href="https://www.instagram.com/beard.and.butter/" target="_blank" rel="noopener">
+      <img src="images/photographer.jpg" alt="Kushagra Saran, photographer">
+      <span><small>Photographed by</small><b>Kushagra Saran Photography</b><i>@beard.and.butter</i></span>
+    </a>
+    <p class="note" style="text-align:center">See more moments and connect with us on Instagram at <a href="https://www.instagram.com/diwaliplaydate.singapore/" target="_blank" rel="noopener">@diwaliplaydate.singapore</a>.</p>
   </div>
 </section>
 
