@@ -25,7 +25,7 @@ cta='''<section style="padding:30px 0 70px"><div class="wrap center">
   <p style="margin-top:22px"><a href="/waitlist/" class="btn btn-rose">Join the 2027 waitlist</a> <a href="/activities/" class="btn btn-ghost">See the activities</a></p>
 </div></section>'''
 PAGES=[
- ('', 'Diwali Playdate Singapore | Deepavali Activities &amp; Event for Kids 2027', None, [named['home'],named['kids-activities'],why,village,named['deepavali-singapore'],cta]),
+ ('', 'Diwali Playdate Singapore | Deepavali Activities &amp; Event for Kids 2027', None, blocks),
  ('activities','Deepavali Activities for Kids in Singapore | Diwali Playdate','Rangoli, diya painting, henna, puja thali, Knock the Raavan, Ramayan storytime, a kids fashion show and Bollywood dance: see every activity and the evening itinerary.',[named['activities'],named['itinerary'],cta]),
  ('2026','Diwali Playdate 2026 Photos | Deepavali Event for Kids Singapore','Highlights from Diwali Playdate 2026 at Vida Lounge, Vidacity, Pasir Ris: rangoli, crafts, the fashion show and the Bollywood dance party.',[named['2026-highlights'],cta]),
  ('about','Meet the Organisers | Diwali Playdate Singapore','Diwali Playdate Singapore is organised by two Singapore mums and entrepreneurs, Rinie Gupta of Yawn to Dawn and Sana of SympleHost.',[named['organisers'],why,cta]),
