@@ -339,7 +339,7 @@
 
 <script>
   // Google Apps Script web app that appends rows to the "Diwali Playdate 2027 Waitlist" sheet
-  const SHEET_URL='PASTE_APPS_SCRIPT_URL';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbxzQiXiNNQkCdbXSMMRBQW9_bdlksbq_9WdjyyH7QbJZBvbxZP54iftjl04dp1HxESF/exec';
   const f=document.getElementById('waitlist'), t=document.getElementById('thanks');
   const ageBox=document.getElementById('ages'), kc=document.getElementById('kidcount');
   const AGES=['Under 1','1','2','3','4','5','6','7','8','9','10','Over 10'];
@@ -366,7 +366,7 @@
       f.style.display='none'; t.style.display='block';
     }catch(err){
       f.style.display='none';
-      t.textContent='🪔 Thanks! Our sign-up form is being set up. In the meantime, follow @diwaliplaydate.singapore on Instagram for the announcement.';
+      t.textContent='🪔 Sorry, that didn\'t go through. Please try again, or message us on Instagram @diwaliplaydate.singapore.';
       t.style.display='block';
     }
   });
@@ -380,7 +380,7 @@
         if(SHEET_URL.startsWith('PASTE')) throw new Error('not connected');
         const d=new URLSearchParams(new FormData(xf)); d.set('form',xf.dataset.form);
         await fetch(SHEET_URL,{method:'POST',mode:'no-cors',body:d});
-      }catch(err){ done.textContent='🪔 Thanks! This form is being set up. Please check back soon, or message us on Instagram @diwaliplaydate.singapore.'; }
+      }catch(err){ done.textContent='🪔 Sorry, that didn\'t go through. Please try again, or message us on Instagram @diwaliplaydate.singapore.'; }
       xf.style.display='none'; done.style.display='block';
     });
   });

@@ -269,8 +269,12 @@
       <img src="/images/k-blue.jpg" alt="" loading="lazy" class="tall" style="object-position:50% 20%">
       <img src="/images/g-swap-party.jpg" alt="Welcome to our swap party: the kids book swap corner" loading="lazy" class="tall" style="object-position:50% 40%">
       <img src="/images/k-diya-boy.jpg" alt="" loading="lazy" class="tall">
-      <img src="/images/k-puja-thali-kids.jpg" alt="Kids lighting their puja thali at the Ganesh–Lakshmi puja" loading="lazy" class="wide">
-      <img src="/images/k-aarti-wonder.jpg" alt="Kids watching the aarti in wonder, diyas in hand" loading="lazy" class="wide">
+      <img src="/images/g-runway-boy.jpg" alt="A little boy in a printed kurta walking the runway" loading="lazy" class="tall" style="object-position:50% 45%">
+      <img src="/images/g-dance-floor.jpg" alt="Kids dancing together at the Bollywood dance party" loading="lazy" class="wide">
+      <img src="/images/g-puja-crowd.jpg" alt="Families gathered round the puja table with diyas" loading="lazy" class="wide">
+      <img src="/images/g-grandma-baby.jpg" alt="A grandmother walking a baby down the runway" loading="lazy" class="tall" style="object-position:50% 55%">
+      <img src="/images/g-parents-dance.jpg" alt="Parents joining in the Bollywood moves" loading="lazy" class="wide">
+      <img src="/images/g-family.jpg" alt="A family in festive outfits at Diwali Playdate" loading="lazy" class="wide">
       <img src="/images/g-puja-table.jpg" alt="The decorated puja table with Ganesha and Lakshmi" loading="lazy" class="wide">
       <img src="/images/k-blond.jpg" alt="" loading="lazy" class="wide" style="object-position:48% 30%">
     </div>
@@ -299,7 +303,7 @@
 
 <script>
   // Google Apps Script web app that appends rows to the "Diwali Playdate 2027 Waitlist" sheet
-  const SHEET_URL='PASTE_APPS_SCRIPT_URL';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbxzQiXiNNQkCdbXSMMRBQW9_bdlksbq_9WdjyyH7QbJZBvbxZP54iftjl04dp1HxESF/exec';
   const f=document.getElementById('waitlist'), t=document.getElementById('thanks');
   const ageBox=document.getElementById('ages'), kc=document.getElementById('kidcount');
   const AGES=['Under 1','1','2','3','4','5','6','7','8','9','10','Over 10'];
@@ -326,7 +330,7 @@
       f.style.display='none'; t.style.display='block';
     }catch(err){
       f.style.display='none';
-      t.textContent='🪔 Thanks! Our sign-up form is being set up. In the meantime, follow @diwaliplaydate.singapore on Instagram for the announcement.';
+      t.textContent='🪔 Sorry, that didn\'t go through. Please try again, or message us on Instagram @diwaliplaydate.singapore.';
       t.style.display='block';
     }
   });
@@ -340,7 +344,7 @@
         if(SHEET_URL.startsWith('PASTE')) throw new Error('not connected');
         const d=new URLSearchParams(new FormData(xf)); d.set('form',xf.dataset.form);
         await fetch(SHEET_URL,{method:'POST',mode:'no-cors',body:d});
-      }catch(err){ done.textContent='🪔 Thanks! This form is being set up. Please check back soon, or message us on Instagram @diwaliplaydate.singapore.'; }
+      }catch(err){ done.textContent='🪔 Sorry, that didn\'t go through. Please try again, or message us on Instagram @diwaliplaydate.singapore.'; }
       xf.style.display='none'; done.style.display='block';
     });
   });
