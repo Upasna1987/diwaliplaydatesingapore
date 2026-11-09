@@ -14,7 +14,15 @@ CONF = os.path.expanduser('~/.diwali-wa-notify.json')
 STATE = os.path.expanduser('~/.diwali-wa-notify-state.json')
 SKIP = {'_row', 'Submitted at'}
 LABELS = {'Waitlist': '🪔 New waitlist sign-up', 'Volunteers': '🙋 New volunteer',
-          'Talent show': '🎤 New talent show nomination', 'Partner': '🤝 New partner enquiry'}
+          'Talent show': '🎤 New talent show nomination'}
+
+
+def clean(v):
+    # One line, no WhatsApp formatting, capped, so a form entry can't fake a message layout.
+    v = ' '.join(str(v).split())
+    for ch in '*_~`':
+        v = v.replace(ch, '')
+    return v[:300]
 
 
 def main():
@@ -25,14 +33,17 @@ def main():
         qs = urllib.parse.urlencode({'key': conf['key'], 'tab': tab, 'after': after})
         rows = json.load(urllib.request.urlopen(f"{conf['url']}?{qs}", timeout=30)).get(tab, [])
         for r in rows:
+            row = r.get('_row')
+            if not isinstance(row, int) or row <= after:
+                continue
             lines = [f"*{LABELS[tab]}*"]
-            lines += [f"{k.replace('_', ' ').capitalize()}: {v}" for k, v in r.items() if k not in SKIP and str(v).strip()]
+            lines += [f"{k.replace('_', ' ').capitalize()}: {clean(v)}" for k, v in r.items() if k not in SKIP and clean(v)]
             body = json.dumps({'recipient': GROUP, 'message': '\n'.join(lines)}).encode()
             req = urllib.request.Request(BRIDGE, body, {'Content-Type': 'application/json'})
             res = json.load(urllib.request.urlopen(req, timeout=30))
             if not res.get('success'):
                 sys.exit(f'bridge send failed: {res}')  # retry next run, keep state
-            state[tab] = r['_row']
+            state[tab] = after = row
             json.dump(state, open(STATE, 'w'))
 
 
