@@ -64,13 +64,21 @@ GUIDE_CSS='''<style>
 .guide p,.guide li{font-size:17px;margin-bottom:12px}
 .guide ul,.guide ol{padding-left:22px}
 .guide a{color:var(--rose);font-weight:700}
-.guide figure{margin:26px 0}.guide figure img{width:100%;border-radius:20px;border:4px solid #fff;box-shadow:0 8px 22px rgba(31,59,56,.13)}
+.guide figure{margin:26px 0}.guide figure img{width:100%;max-height:480px;object-fit:cover;object-position:50% 35%;border-radius:20px;border:4px solid #fff;box-shadow:0 8px 22px rgba(31,59,56,.13)}
 .guide figcaption{font-size:14px;color:var(--muted);margin-top:8px;text-align:center}
 .guide .short{background:var(--cream);border:2px solid var(--line);border-radius:20px;padding:18px 22px;margin:24px 0}
 .guide .short > b{font-family:Fraunces,serif;font-size:19px;color:var(--teal-d);display:block;margin-bottom:8px}
 .guide .short li{margin-bottom:6px}
 .guide .more{background:var(--pink);border-radius:20px;padding:18px 22px;margin:34px 0 10px;font-size:17px}
 .guide .story li{margin-bottom:10px}
+.guide .toc{border:2px solid var(--line);border-radius:20px;padding:16px 22px;margin:24px 0;background:var(--white)}
+.guide .toc b{font-family:Fraunces,serif;color:var(--teal-d);font-size:18px}
+.guide .toc ol{margin:8px 0 0}.guide .toc li{font-size:15.5px;margin-bottom:4px}.guide .toc a{font-weight:600;color:var(--teal-d)}
+.guide h2{scroll-margin-top:84px}
+.guide details{border:2px solid var(--line);border-radius:16px;padding:12px 18px;margin-bottom:12px;background:var(--white)}
+.guide summary{font-weight:800;cursor:pointer;font-size:17px}.guide details p{margin:10px 0 0}
+.guide table{border-collapse:collapse;width:100%;margin:14px 0 18px;font-size:15.5px}.guide th,.guide td{border:1.5px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}.guide th{background:var(--cream)}
+@media(max-width:560px){.guide table{font-size:14px}.guide th,.guide td{padding:7px 8px}}
 .glist{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:900px;margin:34px auto 0}
 @media(max-width:640px){.glist{grid-template-columns:1fr}}
 .glist a{text-decoration:none;color:inherit}
@@ -86,9 +94,18 @@ for fn in sorted(os.listdir(gdir)):
 GUIDE_META={}
 for g in GUIDES:
     gslug='guides/'+g['slug']
+    body=g['body']; toc=[]
+    def _id(m):
+        txt=re.sub(r'<[^>]+>','',m.group(1)); hid=re.sub(r'[^a-z0-9]+','-',txt.lower()).strip('-')[:60]
+        toc.append((hid,txt)); return f'<h2 id="{hid}">{m.group(1)}</h2>'
+    body=re.sub(r'<h2>(.*?)</h2>',_id,body)
+    tochtml='<nav class="toc"><b>In this guide</b><ol>'+''.join(f'<li><a href="#{i}">{t}</a></li>' for i,t in toc)+'</ol></nav>'
+    body=body.replace('<!--TOC-->',tochtml)
+    g['faq']=[(re.sub(r'<[^>]+>','',q).strip(),re.sub(r'\s+',' ',re.sub(r'<[^>]+>','',a)).strip()) for q,a in re.findall(r'<details><summary>(.*?)</summary>(.*?)</details>',body,re.S)]
+    words=len(re.sub(r'<[^>]+>',' ',body).split()); mins=max(1,round(words/220))
     sec=(f'<section style="padding-top:20px">{GUIDE_CSS}<article class="guide">'
-         f'<p class="crumbs"><a href="/guides/">Guides</a> · Diwali Playdate Singapore</p>'
-         f'<h1>{g["h1"]}</h1>{g["body"]}</article></section>')
+         f'<p class="crumbs"><a href="/guides/">Guides</a> · Diwali Playdate Singapore · {mins} min read</p>'
+         f'<h1>{g["h1"]}</h1>{body}</article></section>')
     PAGES.append((gslug,g['title'],g['desc'],[sec,cta]))
     GUIDE_META[gslug]=g
 cards=''.join(f'<a class="act" href="/guides/{g["slug"]}/"><img class="ph" src="/images/{g["image"]}" alt="" loading="lazy"><h3>{re.sub(r"<[^>]+>","",g["h1"])}</h3><p>{g["desc"]}</p></a>' for g in GUIDES)
@@ -135,6 +152,9 @@ for slug,title,desc,parts in PAGES:
         h=h.replace('<meta property="og:type" content="website">','<meta property="og:type" content="article">')
         art={"@context":"https://schema.org","@type":"Article","headline":re.sub(r"<[^>]+>","",g['h1']),"description":g['desc'],"image":img,"datePublished":g['date'],"dateModified":g['date'],"mainEntityOfPage":url,"author":[{"@type":"Person","name":"Rinie Gupta"},{"@type":"Person","name":"Sana"}],"publisher":{"@type":"Organization","name":"Diwali Playdate Singapore","logo":{"@type":"ImageObject","url":"https://diwaliplaydatesingapore.com/images/deco-diya.png"}}}
         h=h.replace('</head>','<script type="application/ld+json">'+json.dumps(art,ensure_ascii=False)+'</script>\n</head>')
+        if g.get('faq'):
+            fq={"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in g['faq']]}
+            h=h.replace('</head>','<script type="application/ld+json">'+json.dumps(fq,ensure_ascii=False)+'</script>\n</head>')
     content='\n\n'.join(parts)
     if slug and slug!='waitlist': content='<div style="height:30px"></div>\n'+content
     page=h+'\n'+navhtml+'\n'+content+'\n\n'+footer
