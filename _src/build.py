@@ -53,6 +53,50 @@ PAGES=[
  ('faq','Diwali Party for Kids in Singapore: FAQ | Diwali Playdate','Ages, tickets, refunds, food, what to wear and more: answers to common questions about Diwali Playdate Singapore.',[named['faq'],cta]),
  ('waitlist','Join the 2027 Waitlist | Diwali Playdate Singapore','Join the Diwali Playdate Singapore 2027 waitlist for first access to tickets and early-bird pricing.',[named['join-waitlist']]),
 ]
+
+# ---- Guides (blog) ----
+GUIDE_CSS='''<style>
+.guide{max-width:760px;margin:0 auto;padding:20px 24px 10px}
+.guide h1{font-size:clamp(32px,4.4vw,46px);margin:14px 0 18px}
+.guide .crumbs{font-size:14px;color:var(--muted)} .guide .crumbs a{color:var(--teal)}
+.guide .intro{font-size:18.5px;color:var(--ink)}
+.guide h2{font-size:clamp(24px,3vw,30px);margin:38px 0 12px}
+.guide p,.guide li{font-size:17px;margin-bottom:12px}
+.guide ul,.guide ol{padding-left:22px}
+.guide a{color:var(--rose);font-weight:700}
+.guide figure{margin:26px 0}.guide figure img{width:100%;border-radius:20px;border:4px solid #fff;box-shadow:0 8px 22px rgba(31,59,56,.13)}
+.guide figcaption{font-size:14px;color:var(--muted);margin-top:8px;text-align:center}
+.guide .short{background:var(--cream);border:2px solid var(--line);border-radius:20px;padding:18px 22px;margin:24px 0}
+.guide .short > b{font-family:Fraunces,serif;font-size:19px;color:var(--teal-d);display:block;margin-bottom:8px}
+.guide .short li{margin-bottom:6px}
+.guide .more{background:var(--pink);border-radius:20px;padding:18px 22px;margin:34px 0 10px;font-size:17px}
+.guide .story li{margin-bottom:10px}
+.glist{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:900px;margin:34px auto 0}
+@media(max-width:640px){.glist{grid-template-columns:1fr}}
+.glist a{text-decoration:none;color:inherit}
+</style>'''
+GUIDES=[]
+gdir=os.path.join(ROOT,'_src/guides')
+for fn in sorted(os.listdir(gdir)):
+    if not fn.endswith('.html'): continue
+    raw=open(os.path.join(gdir,fn)).read()
+    meta=dict(re.findall(r'^(\w+): (.*)$',raw.split('-->')[0],re.M))
+    meta['body']=raw.split('-->',1)[1]
+    GUIDES.append(meta)
+GUIDE_META={}
+for g in GUIDES:
+    gslug='guides/'+g['slug']
+    sec=(f'<section style="padding-top:20px">{GUIDE_CSS}<article class="guide">'
+         f'<p class="crumbs"><a href="/guides/">Guides</a> · Diwali Playdate Singapore</p>'
+         f'<h1>{g["h1"]}</h1>{g["body"]}</article></section>')
+    PAGES.append((gslug,g['title'],g['desc'],[sec,cta]))
+    GUIDE_META[gslug]=g
+cards=''.join(f'<a class="act" href="/guides/{g["slug"]}/"><img class="ph" src="/images/{g["image"]}" alt="" loading="lazy"><h3>{re.sub(r"<[^>]+>","",g["h1"])}</h3><p>{g["desc"]}</p></a>' for g in GUIDES)
+gindex=(f'<section style="padding-top:20px">{GUIDE_CSS}<div class="wrap center"><span class="ribbon orange">Guides</span>'
+        f'<h2>Deepavali with <span class="script">kids</span></h2><p class="lead">Ideas, stories and activities for celebrating Deepavali with babies, toddlers and kids in Singapore, from two mums who run Diwali Playdate.</p></div>'
+        f'<div class="wrap"><div class="glist">{cards}</div><p class="lead center" style="margin:30px auto 0">Looking for printables? <a href="/printables/" style="color:var(--rose);font-weight:700">Free Diwali printables for kids</a>.</p></div></section>')
+PAGES.append(('guides','Deepavali with Kids: Guides, Stories &amp; Activities | Diwali Playdate Singapore','Guides for celebrating Deepavali with kids in Singapore: rangoli ideas for toddlers, the Ramayana story for kids, crafts and activities.',[gindex,cta]))
+
 navhtml='''<nav>
   <div class="wrap">
     <a class="logo" href="/"><span class="script">Diwali</span><b>Playdate SG</b></a>
@@ -85,6 +129,12 @@ for slug,title,desc,parts in PAGES:
         t=json.loads(re.search(r'>(.*)</script>',b,re.S).group(1))['@type']
         keep=(slug=='' and t in('Organization','Event')) or (slug=='faq' and t=='FAQPage') or (slug=='2026' and t=='Event')
         if not keep: h=h.replace(b,'')
+    if slug in GUIDE_META:
+        g=GUIDE_META[slug]; img='https://diwaliplaydatesingapore.com/images/'+g['image']
+        h=re.sub(r'<meta property="og:image" content="[^"]*">',f'<meta property="og:image" content="{img}">',h)
+        h=h.replace('<meta property="og:type" content="website">','<meta property="og:type" content="article">')
+        art={"@context":"https://schema.org","@type":"Article","headline":re.sub(r"<[^>]+>","",g['h1']),"description":g['desc'],"image":img,"datePublished":g['date'],"dateModified":g['date'],"mainEntityOfPage":url,"author":[{"@type":"Person","name":"Rinie Gupta"},{"@type":"Person","name":"Sana"}],"publisher":{"@type":"Organization","name":"Diwali Playdate Singapore","logo":{"@type":"ImageObject","url":"https://diwaliplaydatesingapore.com/images/deco-diya.png"}}}
+        h=h.replace('</head>','<script type="application/ld+json">'+json.dumps(art,ensure_ascii=False)+'</script>\n</head>')
     content='\n\n'.join(parts)
     if slug and slug!='waitlist': content='<div style="height:30px"></div>\n'+content
     page=h+'\n'+navhtml+'\n'+content+'\n\n'+footer
