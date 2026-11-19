@@ -25,6 +25,7 @@ cta='''<section style="padding:30px 0 70px"><div class="wrap center">
   <p style="margin-top:22px"><a href="/waitlist/" class="btn btn-rose">Join the 2027 waitlist</a> <a href="/activities/" class="btn btn-ghost">See the activities</a></p>
 </div></section>'''
 printables='''<section id="printables" style="padding-top:20px">
+  <style>#printables .acts{grid-template-columns:repeat(2,1fr);max-width:860px;margin-left:auto;margin-right:auto}@media(max-width:560px){#printables .acts{grid-template-columns:1fr}}</style>
   <div class="wrap center">
     <span class="ribbon teal">Free downloads</span>
     <h2>Diwali <span class="script">printables</span> for kids</h2>
@@ -35,6 +36,7 @@ printables='''<section id="printables" style="padding-top:20px">
       <div class="act"><img class="ph" src="/images/dl-ramayan.jpg" alt="Cover of the Ramayan and the story of Diwali picture story" style="object-position:50% 40%"><h3>The <em>Ramayan</em> story</h3><p>The picture story we tell at the playdate: 15 illustrated scenes with a short read-aloud line under each, from Ayodhya to the diyas that welcomed Ram home. About 5 minutes, ages 2–10.</p><p style="margin-top:12px"><a class="btn btn-rose" href="/downloads/ramayan-story-diwali-playdate.pdf" download>Download PDF (6 MB)</a></p></div>
       <div class="act"><img class="ph" src="/images/dl-rangoli.jpg" alt="A rangoli mandala colouring sheet" style="object-position:50% 45%"><h3>Rangoli <em>colouring sheets</em></h3><p>7 designs from a chunky toddler flower to a detailed mandala, plus a finish-the-half page and a dot-rangoli grid. Colour them, or fill them with coloured rice and petals.</p><p style="margin-top:12px"><a class="btn btn-rose" href="/downloads/rangoli-colouring-sheets-diwali-playdate.pdf" download>Download PDF (0.2 MB)</a></p></div>
       <div class="act"><img class="ph" src="/images/dl-raavan.jpg" alt="Sheet of Raavan cup faces to cut out" style="object-position:50% 40%"><h3>Knock the <em>Raavan</em></h3><p>Our most popular game. Print the ten Raavan heads, stick them on paper cups, stack a pyramid and knock it down. Includes a colour-your-own sheet and a scorecard.</p><p style="margin-top:12px"><a class="btn btn-rose" href="/downloads/knock-the-raavan-game-diwali-playdate.pdf" download>Download PDF (1.6 MB)</a></p></div>
+      <div class="act"><img class="ph" src="/images/dl-magnatile.jpg" alt="Ram and Sita picture puzzle pieces for magnetic tiles" style="object-position:50% 40%"><h3>Magnetic tile <em>puzzles</em></h3><p>Ram, Sita, Lakshman, Hanuman, Raavan and the golden deer as 2-piece puzzles for toddlers and 4-piece puzzles for older kids. Print, cut, stick on your Magna-Tiles and the puzzle is ready.</p><p style="margin-top:12px"><a class="btn btn-rose" href="/downloads/ramayan-magnetic-tile-puzzles-diwali-playdate.pdf" download>Download PDF (1.9 MB)</a></p></div>
     </div>
     <p class="lead center" style="margin:34px auto 0">Made something lovely? Tag us on Instagram <a href="https://www.instagram.com/diwaliplaydate.singapore/">@diwaliplaydate.singapore</a>.</p>
   </div>
@@ -47,7 +49,7 @@ PAGES=[
  ('talent-show','Kids Talent Show Nominations | Diwali Playdate Singapore','Nominate your child (ages 1–10) for the Diwali Playdate 2027 talent show. Every performer gets a certificate.',[named['talent-show']]),
  ('volunteer','Volunteer at Diwali Playdate Singapore','Run a craft or activity station at Diwali Playdate 2027. Pick your station and send us a short role-play video.',[named['volunteer']]),
  ('partner','Sponsor or Partner with Diwali Playdate Singapore','Sponsors, vendors, goodie-bag partners and community groups: reach families celebrating Deepavali in Singapore.',[named['partner']]),
- ('printables','Free Diwali Printables for Kids: Ramayan Story, Rangoli Colouring &amp; Games | Singapore','Free Diwali printables for kids: a read-aloud Ramayan picture story, rangoli colouring sheets for toddlers to 10-year-olds, and the Knock the Raavan cup game. Print at home or in class.',[printables,cta]),
+ ('printables','Free Diwali Printables for Kids: Ramayan Story, Rangoli Colouring &amp; Games | Singapore','Free Diwali printables for kids: a read-aloud Ramayan picture story, rangoli colouring sheets, Ramayan magnetic tile puzzles and the Knock the Raavan cup game. Print at home or in class.',[printables,cta]),
  ('faq','Diwali Party for Kids in Singapore: FAQ | Diwali Playdate','Ages, tickets, refunds, food, what to wear and more: answers to common questions about Diwali Playdate Singapore.',[named['faq'],cta]),
  ('waitlist','Join the 2027 Waitlist | Diwali Playdate Singapore','Join the Diwali Playdate Singapore 2027 waitlist for first access to tickets and early-bird pricing.',[named['join-waitlist']]),
 ]
