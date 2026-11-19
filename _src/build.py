@@ -17,13 +17,28 @@ for b in blocks:
     if i: named[i]=b
     else: unnamed.append(b)
 why,village=unnamed[0],unnamed[1]
-LINKS={'#activities':'/activities/','#itinerary':'/activities/#itinerary','#2026-highlights':'/2026/','#talent-show':'/talent-show/','#volunteer':'/volunteer/','#faq':'/faq/','#join-waitlist':'/waitlist/','#partner':'/partner/','#organisers':'/about/'}
+LINKS={'#activities':'/activities/','#itinerary':'/activities/#itinerary','#2026-highlights':'/2026/','#talent-show':'/talent-show/','#volunteer':'/volunteer/','#faq':'/faq/','#join-waitlist':'/waitlist/','#partner':'/partner/','#organisers':'/about/','#printables-page':'/printables/'}
 cta='''<section style="padding:30px 0 70px"><div class="wrap center">
   <span class="ribbon">2027 waitlist open</span>
   <h2>Be the first to <span class="script">know</span></h2>
   <p class="lead">Tickets open as soon as our 2027 venue is confirmed. Waitlist families get first access and early-bird pricing.</p>
   <p style="margin-top:22px"><a href="/waitlist/" class="btn btn-rose">Join the 2027 waitlist</a> <a href="/activities/" class="btn btn-ghost">See the activities</a></p>
 </div></section>'''
+printables='''<section id="printables" style="padding-top:20px">
+  <div class="wrap center">
+    <span class="ribbon teal">Free downloads</span>
+    <h2>Diwali <span class="script">printables</span> for kids</h2>
+    <p class="lead">The same activities our kids loved at Diwali Playdate, ready to print at home or in class. Free for families, teachers and playgroups.</p>
+  </div>
+  <div class="wrap">
+    <div class="acts" style="margin-top:34px">
+      <div class="act"><img class="ph" src="/images/dl-ramayan.jpg" alt="Cover of the Ramayan and the story of Diwali picture story" style="object-position:50% 40%"><h3>The <em>Ramayan</em> story</h3><p>The picture story we tell at the playdate: 15 illustrated scenes with a short read-aloud line under each, from Ayodhya to the diyas that welcomed Ram home. About 5 minutes, ages 2–10.</p><p style="margin-top:12px"><a class="btn btn-rose" href="/downloads/ramayan-story-diwali-playdate.pdf" download>Download PDF (6 MB)</a></p></div>
+      <div class="act"><img class="ph" src="/images/dl-rangoli.jpg" alt="A rangoli mandala colouring sheet" style="object-position:50% 45%"><h3>Rangoli <em>colouring sheets</em></h3><p>7 designs from a chunky toddler flower to a detailed mandala, plus a finish-the-half page and a dot-rangoli grid. Colour them, or fill them with coloured rice and petals.</p><p style="margin-top:12px"><a class="btn btn-rose" href="/downloads/rangoli-colouring-sheets-diwali-playdate.pdf" download>Download PDF (0.2 MB)</a></p></div>
+      <div class="act"><img class="ph" src="/images/dl-raavan.jpg" alt="Sheet of Raavan cup faces to cut out" style="object-position:50% 40%"><h3>Knock the <em>Raavan</em></h3><p>Our most popular game. Print the ten Raavan heads, stick them on paper cups, stack a pyramid and knock it down. Includes a colour-your-own sheet and a scorecard.</p><p style="margin-top:12px"><a class="btn btn-rose" href="/downloads/knock-the-raavan-game-diwali-playdate.pdf" download>Download PDF (1.6 MB)</a></p></div>
+    </div>
+    <p class="lead center" style="margin:34px auto 0">Made something lovely? Tag us on Instagram <a href="https://www.instagram.com/diwaliplaydate.singapore/">@diwaliplaydate.singapore</a>.</p>
+  </div>
+</section>'''
 PAGES=[
  ('', 'Diwali Playdate Singapore | Deepavali Events for Kids 2027', None, blocks),
  ('activities','Deepavali Activities &amp; Crafts for Kids, Toddlers &amp; Preschoolers | Singapore','Rangoli, diya painting, henna, puja thali, Knock the Raavan, Ramayan storytime, a kids fashion show and Bollywood dance: see every activity and the evening itinerary.',[named['activities'],named['itinerary'],cta]),
@@ -32,6 +47,7 @@ PAGES=[
  ('talent-show','Kids Talent Show Nominations | Diwali Playdate Singapore','Nominate your child (ages 1–10) for the Diwali Playdate 2027 talent show. Every performer gets a certificate.',[named['talent-show']]),
  ('volunteer','Volunteer at Diwali Playdate Singapore','Run a craft or activity station at Diwali Playdate 2027. Pick your station and send us a short role-play video.',[named['volunteer']]),
  ('partner','Sponsor or Partner with Diwali Playdate Singapore','Sponsors, vendors, goodie-bag partners and community groups: reach families celebrating Deepavali in Singapore.',[named['partner']]),
+ ('printables','Free Diwali Printables for Kids: Ramayan Story, Rangoli Colouring &amp; Games | Singapore','Free Diwali printables for kids: a read-aloud Ramayan picture story, rangoli colouring sheets for toddlers to 10-year-olds, and the Knock the Raavan cup game. Print at home or in class.',[printables,cta]),
  ('faq','Diwali Party for Kids in Singapore: FAQ | Diwali Playdate','Ages, tickets, refunds, food, what to wear and more: answers to common questions about Diwali Playdate Singapore.',[named['faq'],cta]),
  ('waitlist','Join the 2027 Waitlist | Diwali Playdate Singapore','Join the Diwali Playdate Singapore 2027 waitlist for first access to tickets and early-bird pricing.',[named['join-waitlist']]),
 ]
@@ -44,6 +60,7 @@ navhtml='''<nav>
       <li><a href="/about/">About us</a></li>
       <li><a href="/talent-show/">Talent show</a></li>
       <li><a href="/volunteer/">Volunteer</a></li>
+      <li><a href="/printables/">Printables</a></li>
       <li><a href="/faq/">FAQ</a></li>
       <li><a href="/waitlist/" class="btn btn-rose">Join waitlist</a></li>
     </ul>
