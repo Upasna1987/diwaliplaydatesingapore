@@ -58,7 +58,7 @@
   nav ul{display:flex;gap:24px;list-style:none;font-weight:700;font-size:15px;align-items:center}
   nav ul a{text-decoration:none} nav ul a:hover{color:var(--rose)}
   nav .btn{padding:8px 18px;font-size:15px}
-  @media(max-width:860px){nav ul li:not(:last-child){display:none}}
+  /* mobile menu rules live with the nav markup in build.py */
 
   /* hero */
   .hero{padding:40px 0 70px;overflow:hidden}
@@ -242,18 +242,46 @@
 <nav>
   <div class="wrap">
     <a class="logo" href="/"><span class="script">Diwali</span><b>Playdate SG</b></a>
-    <ul>
+    <ul id="navlinks">
       <li><a href="/activities/">Activities</a></li>
       <li><a href="/2026/">2026</a></li>
       <li><a href="/about/">About us</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/printables/">Printables</a></li>
       <li><a href="/talent-show/">Talent show</a></li>
       <li><a href="/volunteer/">Volunteer</a></li>
-      <li><a href="/printables/">Printables</a></li>
       <li><a href="/faq/">FAQ</a></li>
-      <li><a href="/waitlist/" class="btn btn-rose">Join waitlist</a></li>
+      <li class="cta-li"><a href="/waitlist/" class="btn btn-rose">Join waitlist</a></li>
     </ul>
+    <div class="navr"><a href="/waitlist/" class="btn btn-rose mob-cta"><span class="lg">Join waitlist</span><span class="sm">Waitlist</span></a>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button></div>
   </div>
 </nav>
+<style>
+  .navr{display:none;align-items:center;gap:10px}
+  .menu-btn{width:44px;height:44px;border:2px solid var(--line);border-radius:12px;background:var(--white);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer}
+  .menu-btn span{display:block;width:20px;height:2.5px;border-radius:2px;background:var(--teal-d);transition:transform .2s,opacity .2s}
+  nav.open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  nav.open .menu-btn span:nth-child(2){opacity:0}
+  nav.open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  @media(min-width:1101px){nav ul{gap:20px}}
+  @media(max-width:1100px){
+    nav ul li:not(:last-child){display:block}
+    .navr{display:flex}
+    nav ul{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fefaf1;border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(31,59,56,.10);padding:6px 0 10px;max-height:calc(100vh - 66px);overflow-y:auto}
+    nav.open ul{display:flex}
+    nav ul li a{display:block;padding:13px 24px;font-size:17px}
+    nav ul .cta-li{display:none}
+  }
+  .logo,.mob-cta{white-space:nowrap}.mob-cta .sm{display:none}
+  @media(max-width:600px){nav .wrap{padding:0 16px}.logo .script{font-size:24px}.logo b{font-size:16px}.mob-cta{padding:8px 14px!important;font-size:14px!important}.mob-cta .lg{display:none}.mob-cta .sm{display:inline}}
+  @media(max-width:350px){.mob-cta{display:none}nav ul .cta-li{display:block;padding:8px 24px}}
+</style>
+<script>
+  (function(){var n=document.currentScript.previousElementSibling.previousElementSibling,b=n.querySelector('.menu-btn');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')});
+  n.querySelectorAll('#navlinks a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');b.setAttribute('aria-expanded','false')})});})();
+</script>
 
 <div style="height:30px"></div>
 <section id="printables" style="padding-top:20px">
